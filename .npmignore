@@ -1,0 +1,19 @@
+# Ignore Storybook configuration and output
+.storybook/
+storybook-static/
+
+# Ignore tests and source maps
+__tests__/
+*.test.*
+*.spec.*
+*.map
+
+# Ignore development files and configuration
+.env
+.DS_Store
+*storybook.log
+tsconfig.json
+tsup.config.ts
+
+# Optionally ignore source files if you only want to publish the built files
+/src

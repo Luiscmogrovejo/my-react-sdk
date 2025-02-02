@@ -1,0 +1,17 @@
+# Node modules
+/node_modules
+
+# Build output
+/dist
+
+# Environment files
+.env
+
+# macOS files
+.DS_Store
+
+# Log files
+*storybook.log
+
+# Optionally, ignore built Storybook output if you generate it locally
+storybook-static/

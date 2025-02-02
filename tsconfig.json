@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "CommonJS",
+        "lib": [
+            "DOM",
+            "ES2022"
+        ],
+        "jsx": "react-jsx", // Enable JSX syntax
+        "strict": true,
+        "noImplicitAny": true,
+        "esModuleInterop": true,
+        "strictNullChecks": true,
+        "declaration": true,
+        "isolatedModules": true,
+        "noEmit": true, // tsup will handle emitting files
+        "outDir": "dist",
+        "types": [
+            "jest",
+            "node"
+        ] // Include jest (and node) types globally
+    },
+    "include": [
+        "src/**/*", // Include all your source files
+        "tests/**/*" // Also include your tests folder (or __tests__ if that’s what you use)
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
