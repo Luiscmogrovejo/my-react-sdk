@@ -1,12 +1,13 @@
 const eslintPluginReact = require('eslint-plugin-react');
 const eslintPluginTypeScript = require('@typescript-eslint/eslint-plugin');
-const eslintConfigPrettier = require('eslint-config-prettier');
+const eslintPluginPrettier = require('eslint-plugin-prettier'); // Add this
+const parser = require('@typescript-eslint/parser');
 
 module.exports = [
   {
     files: ['src/**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
-      parser: '@typescript-eslint/parser',
+      parser: parser,
       parserOptions: {
         ecmaVersion: 2022,
         sourceType: 'module',
@@ -18,9 +19,10 @@ module.exports = [
     plugins: {
       react: eslintPluginReact,
       '@typescript-eslint': eslintPluginTypeScript,
+      prettier: eslintPluginPrettier, // Add the plugin here
     },
     rules: {
-      'prettier/prettier': 'error',
+      'prettier/prettier': 'error', // Now this rule will work
     },
     settings: {
       react: {
