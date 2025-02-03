@@ -29,7 +29,7 @@
   ],
   "author": "luiscmogrovejo",
   "license": "MIT",
-  "description": "",
+  "description": "My React SDK",
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
     "@commitlint/cli": "^19.7.1",
