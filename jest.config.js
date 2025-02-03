@@ -1,12 +1,13 @@
 // jest.config.js
 module.exports = {
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
   transform: {
-    "^.+\\.tsx?$": "ts-jest",
+    '^.+\\.tsx?$': 'ts-jest',
   },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
-    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
+  snapshotSerializers: [], // Add snapshot serializers if needed
 };
