@@ -12,6 +12,3 @@
 
 # Log files
 *storybook.log
-
-# Optionally, ignore built Storybook output if you generate it locally
-storybook-static/

@@ -1,14 +1,19 @@
 {
     "compilerOptions": {
         "target": "ES2022",
-        "module": "CommonJS",
+        "module": "esnext",
+        "moduleResolution": "node",
         "lib": [
             "DOM",
-            "ES2022"
+            "ES2022",
+            "DOM.Iterable"
         ],
         "jsx": "react-jsx", // Enable JSX syntax
         "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
         "noImplicitAny": true,
+        "resolveJsonModule": true,
         "esModuleInterop": true,
         "strictNullChecks": true,
         "declaration": true,

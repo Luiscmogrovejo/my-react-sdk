@@ -1,19 +1,33 @@
+# Only include the built output in the package
+
+# Ignore source code
+src/
+
+# Ignore tests
+__tests__/
+tests/
+
+# Ignore configuration files (not needed in production)
+tsconfig.json
+tsup.config.ts
+jest.config.js
+jest.setup.ts
+.eslintrc*
+.prettierrc*
+*.config.*
+
 # Ignore Storybook configuration and output
 .storybook/
 storybook-static/
 
-# Ignore tests and source maps
-__tests__/
-*.test.*
-*.spec.*
-*.map
-
-# Ignore development files and configuration
+# Ignore environment files and logs
 .env
-.DS_Store
-*storybook.log
-tsconfig.json
-tsup.config.ts
+.env.*
+*.log
 
-# Optionally ignore source files if you only want to publish the built files
-/src
+# Ignore OS-specific files
+.DS_Store
+
+# Ignore lock files
+package-lock.json
+yarn.lock
