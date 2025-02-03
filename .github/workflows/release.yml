@@ -90,5 +90,7 @@ jobs:
       - name: Deploy Storybook to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # Or use PAT_TOKEN if needed
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Use GH_PAT if GITHUB_TOKEN fails
           publish_dir: ./storybook-static
+          keep_files: true  # Prevents the need to manage git remotes manually
+
