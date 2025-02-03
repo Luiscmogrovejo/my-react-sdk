@@ -1,6 +1,6 @@
 {
   "name": "typescript-react-library-sdk",
-  "version": "0.0.2",
+  "version": null,
   "main": "index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,6 +10,7 @@
     "url": ""
   },
   "scripts": {
+    "release": "standard-version",
     "dev": "vite",
     "build": "tsup",
     "storybook": "storybook dev -p 6006",
@@ -46,5 +47,16 @@
     "ts-jest": "^29.2.5",
     "tsup": "^8.3.6",
     "typescript": "^5.7.3"
+  },
+  "standard-version": {
+    "skip": {
+      "commit": false,
+      "tag": false,
+      "changelog": false
+    },
+    "scripts": {
+      "prebump": "echo Prebump script running...",
+      "postbump": "echo Postbump script running..."
+    }
   }
 }
