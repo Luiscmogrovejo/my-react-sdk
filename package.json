@@ -1,6 +1,6 @@
 {
   "name": "typescript-react-library-sdk",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "main": "index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
