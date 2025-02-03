@@ -1,8 +1,8 @@
-import eslintPluginReact from 'eslint-plugin-react';
-import eslintPluginTypeScript from '@typescript-eslint/eslint-plugin';
-import eslintConfigPrettier from 'eslint-config-prettier';
+const eslintPluginReact = require('eslint-plugin-react');
+const eslintPluginTypeScript = require('@typescript-eslint/eslint-plugin');
+const eslintConfigPrettier = require('eslint-config-prettier');
 
-export default [
+module.exports = [
   {
     files: ['src/**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
