@@ -1,14 +1,61 @@
 # Node modules
-/node_modules
+/node_modules/
 
 # Build output
-/dist
+/dist/
+/build/
+/coverage/
 
 # Environment files
 .env
+.env.*
+*.env
 
-# macOS files
+# macOS system files
 .DS_Store
 
 # Log files
-*storybook.log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+storybook.log
+
+# IDE settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# TypeScript
+*.tsbuildinfo
+
+# Dependency lock files (if using both npm & yarn, keep one)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Storybook
+.storybook/
+storybook-static/
+
+# Test coverage reports
+coverage/
+.nyc_output/
+
+# Jest cache
+jest.cache/
+.cache/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# OS-specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# GitHub workflows cache
+.github/workflows/*.log

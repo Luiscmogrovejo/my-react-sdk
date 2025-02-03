@@ -1,13 +1,21 @@
-# Only include the built output in the package
+# Ignore everything by default
+*
 
-# Ignore source code
+# Allow the following files to be included in the package
+!dist/
+!README.md
+!LICENSE
+!package.json
+!CHANGELOG.md
+!index.js
+!index.d.ts
+
+# Exclude source code
 src/
-
-# Ignore tests
 __tests__/
 tests/
 
-# Ignore configuration files (not needed in production)
+# Exclude configuration files
 tsconfig.json
 tsup.config.ts
 jest.config.js
@@ -15,19 +23,19 @@ jest.setup.ts
 .eslintrc*
 .prettierrc*
 *.config.*
+.vscode/
+.idea/
 
-# Ignore Storybook configuration and output
+# Exclude Storybook files
 .storybook/
 storybook-static/
 
-# Ignore environment files and logs
+# Exclude environment files and logs
 .env
 .env.*
 *.log
 
-# Ignore OS-specific files
-.DS_Store
-
-# Ignore lock files
+# Exclude lock files
 package-lock.json
 yarn.lock
+pnpm-lock.yaml
