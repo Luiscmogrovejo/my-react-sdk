@@ -7,7 +7,7 @@
   "homepage": "https://google.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/luiscmogrovejo/typescript-react-library-sdk.git"
+    "url": "https://github.com/luiscmogrovejo/my-react-sdk.git"
   },
   "scripts": {
     "semantic-release": "semantic-release",
