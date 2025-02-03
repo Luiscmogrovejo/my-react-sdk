@@ -27,5 +27,7 @@ export default defineConfig({
             },
             plugins: [visualizer({ open: true })],
         },
+        // Increase the limit so that warnings about chunk size do not trigger an error
+        chunkSizeWarningLimit: 1000,
     },
 });
