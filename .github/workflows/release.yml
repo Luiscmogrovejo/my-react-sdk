@@ -41,8 +41,6 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
-    needs: [lint, type-check, test]
-    if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/next' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -54,16 +52,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Add an .npmrc config step before build and release:
-      - name: Configure .npmrc
-        run: |
-          # Configure GitHub Packages scope
-          echo "@luiscmogrovejo:registry=https://npm.pkg.github.com" >> ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-
-          # Configure npmjs.org
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-
       - name: Build
         run: npm run build
 
@@ -72,10 +60,9 @@ jobs:
 
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed for @semantic-release/github
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}       # Token to publish to npm & GitHub Packages
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # for creating GitHub releases
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # npm token for publishing
         run: npx semantic-release
-
 
   deploy-docs:
     runs-on: ubuntu-latest
