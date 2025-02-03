@@ -42,7 +42,6 @@ jobs:
   release:
     runs-on: ubuntu-latest
     needs: [lint, type-check, test]
-    # Run releases on both main and next branches
     if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/next' }}
     steps:
       - uses: actions/checkout@v4
@@ -64,7 +63,6 @@ jobs:
 
   deploy-docs:
     runs-on: ubuntu-latest
-    # Only deploy docs on the main branch.
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v4
@@ -75,24 +73,22 @@ jobs:
       - name: Deploy to GitHub Pages (Docs)
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Or use PAT_TOKEN if needed
           publish_dir: ./docs
 
   deploy-storybook:
     runs-on: ubuntu-latest
-    # Only deploy Storybook on the main branch.
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
       - name: Build Storybook
-        # Override the CI variable if needed so that warnings don’t cause the build to fail.
         env:
-          CI: false
+          CI: false  # Prevent warnings from failing the build
         run: npm run build-storybook
       - name: Deploy Storybook to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Or use PAT_TOKEN if needed
           publish_dir: ./storybook-static

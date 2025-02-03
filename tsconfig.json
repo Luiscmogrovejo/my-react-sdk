@@ -8,7 +8,7 @@
             "ES2022",
             "DOM.Iterable"
         ],
-        "jsx": "react-jsx", // Enable JSX syntax
+        "jsx": "react-jsx",
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "noFallthroughCasesInSwitch": true,
@@ -18,16 +18,17 @@
         "strictNullChecks": true,
         "declaration": true,
         "isolatedModules": true,
-        "noEmit": true, // tsup will handle emitting files
+        "noEmit": true,
         "outDir": "dist",
+        "skipLibCheck": true,
         "types": [
             "jest",
             "node"
-        ] // Include jest (and node) types globally
+        ]
     },
     "include": [
-        "src/**/*", // Include all your source files
-        "tests/**/*" // Also include your tests folder (or __tests__ if that’s what you use)
+        "src/**/*",
+        "tests/**/*"
     ],
     "exclude": [
         "node_modules"
