@@ -1,5 +1,5 @@
 {
-  "name": "@luiscmogrovejo/typescript-react-library-sdk",
+  "name": "typescript-react-library-sdk",
   "version": "1.0.0",
   "main": "index.js",
   "module": "./dist/index.js",
